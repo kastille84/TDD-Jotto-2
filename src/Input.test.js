@@ -54,7 +54,7 @@ describe("render", () => {
     })
     test("does Not render submit button", ()=> {
       const submitButton = findByTestAttr(wrapper, 'submit-button')
-      expect(submitButton.length).toBe(0);
+      expect(submitButton.length).toBe(0 );
     })
   })
 })
