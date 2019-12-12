@@ -26,7 +26,7 @@ describe("getSecretWord action creator", ()=> {
       })
     })
     //we are returning a promise, so test will wait
-    //to determine if test passes or fails
+    //to determine if test passes or failsi
     return store.dispatch(getSecretWord())
     .then(()=> {
       const newState = store.getState();

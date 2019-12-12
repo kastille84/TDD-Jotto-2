@@ -29,7 +29,7 @@ export const guessWord = (guessedWord) => {
 
 export const getSecretWord = ()=> {
   return (dispatch, getState) => {
-    //because we are using moxios, it'll never reach this addres
+    //because we are using moxios, it'll never reach this addresf
     return axios.get('http://localhost:3030')
     .then(response => {
       dispatch({type: actionTypes.SET_SECRET_WORD, payload:  response.data})
