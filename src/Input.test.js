@@ -59,6 +59,25 @@ describe("render", () => {
   })
 })
 
-describe("updating state", () => {
-
+describe("redux props", () => {
+  //for the props in mapStateToProps
+  test('has success piece of state as prop', ()=> {
+    const success = true; //or false if you want
+    const wrapper = setup({success: success});
+    //instance gives us the react component, to view it's props
+    const successProp =  wrapper.instance().props.success;
+    expect(successProp).toBe(success);
+  })
+  
+  //for the prop in mapDispatchToProps
+  //**comparing func isn't as easy to do so instead
+  //check that guessWord  props
+  // 1. Exists
+  // 2. Is a function
+  test(" 'guessWord' action creator is a function prop", ()=>{
+    //we not concerned with state, only action creator so no arg in setup
+    const wrapper = setup();
+    const guessWordProp =  wrapper.instance().props.guessWord;
+    expect(guessWordProp).toBeInstanceOf(Function);
+  })
 })
