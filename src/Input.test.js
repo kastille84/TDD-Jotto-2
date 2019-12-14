@@ -101,7 +101,7 @@ describe("'guessWord' action creator call", () => {
     wrapper.instance().inputBox.current = {value: guessedWord}
     //simulate a click
     //*** we need preventDefault, because simulate doens't know of event */
-    
+
     submitButton.simulate("click", { preventDefault(){} });
   })
 
@@ -114,5 +114,9 @@ describe("'guessWord' action creator call", () => {
     //console.log(guessWordMock.mock.calls);
     const guessWordArg = guessWordMock.mock.calls[0][0];
     expect(guessWordArg).toBe(guessedWord);
+  })
+
+  test('input box clears on submit', () => {
+    expect(wrapper.instance().inputBox.current.value).toBe("")
   })
 })
